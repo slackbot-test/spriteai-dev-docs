@@ -2,7 +2,6 @@
 slug: /
 sidebar_position: 1
 ---
-
 # generateSprite Documentation
 
 ## Brief Description
@@ -20,14 +19,17 @@ const result = await sprite.generateSprite(description, options);
 ## Parameters
 - `description` (string, required): A text description of the character to generate.
 - `options` (object, optional):
-  - `iterations` (number): Number of sprite variations to generate.
+  - `iterations` (number): Number of sprite variations to generate (default: 1).
   - `size` (string): Size of the generated image (default: "1024x1024").
-  - `save` (boolean): Whether to save the generated image to disk.
+  - `save` (boolean): Whether to save the generated image to disk (default: false).
+  - `characterDescription` (string): Additional character description for GPT analysis.
+  - `realisticMode` (boolean): Whether to generate more realistic images (default: false).
 
 ## Return Value
 Returns an object or array of objects containing:
-- `messages`: JSON object with frameHeight and frameWidth information.
+- `messages`: JSON object with frameHeight, frameWidth, and other sprite information.
 - `image`: Base64-encoded image data URL of the generated sprite sheet.
+- `pngBuffer`: PNG buffer of the generated sprite sheet.
 
 ## Examples
 
@@ -46,9 +48,17 @@ variations.forEach((variation, index) => {
 });
 ```
 
+3. Generate a realistic sprite:
+```javascript
+const realisticSprite = await sprite.generateSprite("A detailed warrior", { realisticMode: true });
+console.log(realisticSprite.messages);
+```
+
 ## Notes or Considerations
-- The function uses AI models (DALL-E 3 and GPT) to generate and analyze images, which may result in varying outputs for the same input.
+- The function uses AI models (DALL-E 3 and GPT-4) to generate and analyze images, which may result in varying outputs for the same input.
 - Generated sprites are optimized for walking animations and follow a specific layout (6 frames in a 2x3 grid).
-- The function converts images to grayscale, which may affect the final output.
+- The function converts images to grayscale for better consistency in sprite sheets.
 - When saving images, they are stored in an 'assets' folder with a filename based on the description.
 - The function may take some time to complete due to API calls and image processing.
+- The `realisticMode` option allows for generating more detailed and realistic sprites, which may be suitable for different art styles or game genres.
+- The `characterDescription` option can be used to provide additional context for GPT analysis, potentially improving the accuracy of sprite information.
