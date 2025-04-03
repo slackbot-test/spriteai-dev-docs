@@ -1,47 +1,61 @@
-# generatePixelArt Documentation
+# Pixel Art Generator Documentation Overview
 
-## Brief Description
-`generatePixelArt` is a function that generates a pixel art sprite based on a given description using AI-powered image generation and processing.
+## Introduction
+The Pixel Art Generator is a powerful tool for creating pixel art sprites using AI-powered image generation and processing. This overview provides a quick guide to the main components and functionalities of the system.
 
-## Usage
-To use `generatePixelArt`, import it from the sprite module and call it with a description of the pixel art sprite you want to generate.
+## Core Functions
 
-```javascript
-import { sprite } from './path/to/sprite/module';
+### generatePixelArt
+The `generatePixelArt` function is the primary method for creating pixel art sprites. It takes a text description and optional parameters to generate a customized pixel art image.
 
-const result = await sprite.generatePixelArt(description, options);
-```
+[Learn more about generatePixelArt](./generatePixelArt.md)
 
-## Parameters
-- `description` (string, required): A text description of the pixel art sprite to generate.
-- `options` (object, optional):
-  - `save` (boolean): Whether to save the generated image to disk.
-  - Other options inherited from the base generate function.
+## Usage Guidelines
 
-## Return Value
-Returns an object containing:
-- `image`: Base64-encoded image data URL of the generated pixel art sprite.
-- `url`: Direct URL to the generated image.
+### Getting Started
+To begin using the Pixel Art Generator, you'll need to import the necessary modules and set up your environment.
 
-## Examples
+### Best Practices
+Follow our recommended best practices to get the most out of the Pixel Art Generator, including tips for crafting effective descriptions and optimizing your results.
 
-1. Generate a simple pixel art sprite:
-```javascript
-const result = await sprite.generatePixelArt("A pixelated robot");
-console.log(result.image);
-console.log(result.url);
-```
+## Advanced Features
 
-2. Generate and save a pixel art sprite:
-```javascript
-const result = await sprite.generatePixelArt("A pixel art cat", { save: true });
-console.log("Saved pixel art sprite:", result.url);
-```
+### Customization Options
+Explore the various options available to fine-tune your pixel art generation, including size constraints, color palettes, and more.
 
-## Notes or Considerations
-- The function uses AI models (DALL-E 3) to generate pixel art images, which may result in varying outputs for the same input.
-- Generated sprites are optimized for a pixel art style with a maximum of 32x32 pixels.
-- The function converts images to a limited color palette for authentic pixel art appearance.
-- When saving images, they are stored with a timestamp-based filename.
-- The function may take some time to complete due to API calls and image processing.
-- Ensure you have the necessary permissions and API keys set up for using the OpenAI image generation service.
+### Saving and Exporting
+Learn how to save your generated pixel art sprites and export them in various formats for use in your projects.
+
+## API Reference
+
+### Function Parameters
+Detailed information on all available parameters for the `generatePixelArt` function and other related methods.
+
+### Return Values
+Understanding the structure and content of the objects returned by the Pixel Art Generator functions.
+
+## Troubleshooting
+
+### Common Issues
+Solutions to frequently encountered problems and how to resolve them.
+
+### Error Messages
+A comprehensive list of error messages you may encounter and their meanings.
+
+## Additional Resources
+
+### Examples
+Practical examples demonstrating different use cases for the Pixel Art Generator.
+
+### FAQ
+Answers to commonly asked questions about using and integrating the Pixel Art Generator.
+
+## Support and Community
+
+### Getting Help
+Information on where to find additional support and how to contact our team.
+
+### Contributing
+Guidelines for contributing to the development and improvement of the Pixel Art Generator.
+
+This overview provides a high-level structure of the Pixel Art Generator documentation. Each section links to more detailed pages that offer in-depth information on specific topics.

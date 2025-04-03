@@ -1,65 +1,53 @@
-# splitSpriteSheet
+# User Documentation Overview
 
-## Brief Description
+## Introduction
 
-The `splitSpriteSheet` function is a utility that splits a sprite sheet image into individual frames. It's part of the sprite module and is designed to work with sprite sheets generated or used in game development contexts.
+This overview page provides a high-level summary of the user documentation, organized by category. Each section below corresponds to a major category in the documentation, with links to more detailed pages for each topic.
 
-## Usage
+## Sprite Manipulation
 
-To use `splitSpriteSheet`, import it from the sprite module and call it with the necessary parameters:
+### splitSpriteSheet
 
-```javascript
-import { sprite } from './path/to/sprite/module';
+The `splitSpriteSheet` function is a utility for splitting a sprite sheet image into individual frames. It's part of the sprite module and is commonly used in game development.
 
-const result = await sprite.splitSpriteSheet(imageBuffer, columns, rows, options);
-```
+[Read more about splitSpriteSheet](./splitSpriteSheet.md)
 
-## Parameters
+## Image Processing
 
-- `imageBuffer` (Buffer, required): The image buffer of the sprite sheet to be split.
-- `columns` (number, required): The number of columns in the sprite sheet.
-- `rows` (number, required): The number of rows in the sprite sheet.
-- `options` (object, optional): Additional options for processing (currently not used, but reserved for future extensions).
+(This section is reserved for future documentation on image processing functions)
 
-## Return Value
+## Game Development Tools
 
-Returns an object containing:
+(This section is reserved for future documentation on game development tools)
 
-- `frames` (Array<Buffer>): An array of image buffers, each representing a single frame from the sprite sheet.
-- `metadata` (object): An object containing metadata about the split frames:
-  - `frameWidth` (number): The width of each frame.
-  - `frameHeight` (number): The height of each frame.
-  - `totalFrames` (number): The total number of frames extracted.
-  - `originalDimensions` (object): The dimensions of the original sprite sheet:
-    - `width` (number): The width of the original sprite sheet.
-    - `height` (number): The height of the original sprite sheet.
+## Asset Management
 
-## Examples
+(This section is reserved for future documentation on asset management functions)
 
-### Basic Usage
+## Utility Functions
 
-```javascript
-import { sprite } from './sprite';
-import fs from 'fs';
+(This section is reserved for future documentation on utility functions)
 
-const spriteSheetBuffer = fs.readFileSync('path/to/spritesheet.png');
+## Getting Started
 
-const result = await sprite.splitSpriteSheet(spriteSheetBuffer, 4, 4);
+(This section is reserved for a future getting started guide)
 
-console.log(`Total frames: ${result.metadata.totalFrames}`);
-console.log(`Frame dimensions: ${result.metadata.frameWidth}x${result.metadata.frameHeight}`);
+## API Reference
 
-// Save each frame as a separate file
-result.frames.forEach((frame, index) => {
-  fs.writeFileSync(`frame_${index}.png`, frame);
-});
-```
+(This section is reserved for a future comprehensive API reference)
 
-## Notes or Considerations
+## Troubleshooting
 
-- The function assumes that all frames in the sprite sheet are of equal size.
-- The sprite sheet should be evenly divisible by the number of columns and rows specified.
-- This function uses the `sharp` library for image processing, which provides high performance for large images.
-- Error handling for invalid inputs or processing errors should be implemented in the calling code.
-- The function returns image buffers, which can be further processed or saved as needed.
-- Future versions may include additional options for frame extraction or processing.
+(This section is reserved for future troubleshooting guides)
+
+## Contributing
+
+(This section is reserved for future contribution guidelines)
+
+## Release Notes
+
+(This section is reserved for future release notes and version history)
+
+---
+
+This overview page will be updated as new documentation is added to each category.
